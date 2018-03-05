@@ -1,8 +1,15 @@
 package com.company;
 
 public class Point {
-    char[] x;
-    char[] y;
+    public char[] x=new char[3];
+    public char[] y=new char[3];
+    Point()
+    {
+        for (int i = 0; i < 3; i++) {
+            x[0]=' ';
+            y[0]=' ';
+        }
+    }
    public void  setPoint(char[] x,char[] y)
     {
         this.x=x;
