@@ -18,7 +18,7 @@ public void ParseGui()
     getlabels();
     for (int i = 0; i < myLabels.size(); i++)
     {
-        System.out.println(myLabels.get(i).name + "    "+myLabels.get(i).text+"    "+myLabels.get(i).size.x+ "     " +myLabels.get(i).size.y + myLabels.get(i).location.x + "     "+myLabels.get(i).location.y);
+        System.out.println(myLabels.get(i).name + "    "+myLabels.get(i).text+"    "+myLabels.get(i).size.x+ "     " +myLabels.get(i).size.y +"      "+ myLabels.get(i).location.x + "     "+myLabels.get(i).location.y);
 
     }
 
@@ -101,7 +101,7 @@ private void getlabels()
             y=new Point();
             l=l+15+23+5;
             int h=0;
-            for (int j=s ;j<dataInput.get(i).length()-2;j++)
+            for (int j=l ;j<dataInput.get(i).length()-2;j++)
             {
                 if(dataInput.get(i).charAt(j)!=',' && h==0)
                     lx.append(dataInput.get(i).charAt(j));

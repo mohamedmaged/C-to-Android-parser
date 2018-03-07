@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1edd8db2-b7aa-469e-9420-d56321706402" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/parser testing/com/company/Modeling.class" afterPath="$PROJECT_DIR$/out/production/parser testing/com/company/Modeling.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/parser testing/com/company/Point.class" afterPath="$PROJECT_DIR$/out/production/parser testing/com/company/Point.class" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Modeling.java" afterPath="$PROJECT_DIR$/src/com/company/Modeling.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MyLabel.java" afterPath="$PROJECT_DIR$/src/com/company/MyLabel.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Point.java" afterPath="$PROJECT_DIR$/src/com/company/Point.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +17,8 @@
       <file leaf-file-name="Modeling.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Modeling.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="105" column="49" lean-forward="false" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
+            <state relative-caret-position="414">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#136#144#0" expanded="true" />
@@ -262,12 +257,12 @@
       <workItem from="1520238602805" duration="3329000" />
       <workItem from="1520245732420" duration="4622000" />
       <workItem from="1520419485872" duration="2125000" />
-      <workItem from="1520431165540" duration="1556000" />
+      <workItem from="1520431165540" duration="1679000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34862000" />
+    <option name="totallyTimeSpent" value="34985000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="104" y="105" width="1857" height="1092" extended-state="6" />
@@ -592,8 +587,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Modeling.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="105" column="49" lean-forward="false" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
+        <state relative-caret-position="414">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#136#144#0" expanded="true" />
