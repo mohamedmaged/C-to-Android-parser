@@ -18,7 +18,8 @@ public void ParseGui()
     getlabels();
     for (int i = 0; i < myLabels.size(); i++)
     {
-        System.out.println(myLabels.get(i).name + "    "+myLabels.get(i).text+"    "+new String(myLabels.get(i).size.x)+ "     " +new String(myLabels.get(i).size.y));
+        System.out.println(myLabels.get(i).name + "    "+myLabels.get(i).text+"    "+myLabels.get(i).size.x+ "     " +myLabels.get(i).size.y + myLabels.get(i).location.x + "     "+myLabels.get(i).location.y);
+
     }
 
 }
@@ -27,12 +28,12 @@ private void getlabels()
 {
     char[] text=null;
     char[] name=null;
-    Point x=new Point();
     Point y=null;
-    char[] size=null;
     char[] location=null;
+    Point x=null;
 
-int m=1;
+
+    int m=1;
     for(int i=0;i<dataInput.size();i++)
     {
 
@@ -51,6 +52,31 @@ int m=1;
           }
 
       }
+        if(s!=-1)
+        {
+            StringBuilder six=new StringBuilder();
+            StringBuilder siy=new StringBuilder();
+            x=new Point();
+
+            s=s+15+23;
+            int h=0;
+            for (int j=s ;j<dataInput.get(i).length()-2;j++)
+            {
+                if(dataInput.get(i).charAt(j)!=',' && h==0)
+                    six.append(dataInput.get(i).charAt(j));
+
+                else
+                {
+                    if (dataInput.get(i).charAt(j)==',')
+                        j++;
+                    siy.append(dataInput.get(i).charAt(j));
+                    h++;
+                }
+
+            }
+
+            x.setPoint(six.toString(),siy.toString());
+        }
         if(t!=-1)
         {
             t=t+15;
@@ -67,33 +93,29 @@ int m=1;
             myLabels.add(new MyLabel(new String(text),new String(name),x,y));
 
         }
-        if(s!=-1)
-        {
 
-            s=s+15+23;
+        if(l!=-1)
+        {
+            StringBuilder lx=new StringBuilder();
+            StringBuilder ly=new StringBuilder();
+            y=new Point();
+            l=l+15+23+5;
             int h=0;
             for (int j=s ;j<dataInput.get(i).length()-2;j++)
             {
-                    if(dataInput.get(i).charAt(j)!=',' && h==0)
-                x.x[j-s]=dataInput.get(i).charAt(j);
-                    else
-                    {
+                if(dataInput.get(i).charAt(j)!=',' && h==0)
+                    lx.append(dataInput.get(i).charAt(j));
 
+                else
+                {
+                    if (dataInput.get(i).charAt(j)==',')
                         j++;
-                        x.y[h]=dataInput.get(i).charAt(j);
-                        h++;
-                    }
+                    ly.append(dataInput.get(i).charAt(j));
+                    h++;
+                }
 
             }
-        }
-        if(l!=-1)
-        {
-            l=l+15+23+5;
-            location=new char[dataInput.get(i).length()-2-l];
-            for (int j=l ;j<dataInput.get(i).length()-2;j++)
-            {
-                location[j-l]=dataInput.get(i).charAt(j);
-            }
+            y.setPoint(lx.toString(),ly.toString());
         }
 
     }

@@ -1,26 +1,20 @@
 package com.company;
 
 public class Point {
-    public char[] x=new char[3];
-    public char[] y=new char[3];
-    Point()
-    {
-        for (int i = 0; i < 3; i++) {
-            x[0]=' ';
-            y[0]=' ';
-        }
-    }
-   public void  setPoint(char[] x,char[] y)
+    String x;
+    String y;
+
+   public void  setPoint(String x,String y)
     {
         this.x=x;
         this.y=y;
     }
 
-    public void setX(char[]x) {
+    public void setX(String x) {
         this.x = x;
     }
 
-    public void setY(char[] y) {
+    public void setY(String y) {
 
         this.y = y;
 
