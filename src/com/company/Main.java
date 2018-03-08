@@ -25,9 +25,11 @@ public class Main {
 ;
         String guInputPath=new String("/home/mohamed/Downloads/Clock/Clock/Form1.Designer.cs");
         String logicInputPath=new String("/home/mohamed/Downloads/Clock/Clock/Form1.cs");
+        String logicOutputPath=new String("/home/mohamed/AndroidStudioProjects/test/app/src/main/java/com/example/mohamed/test/MainActivity.java");
         String outputGuiPath=new String("/home/mohamed/AndroidStudioProjects/test/app/src/main/res/layout/activity_main.xml");
-Modeling mymodel=new Modeling();
-mymodel.ParseGui(guInputPath,outputGuiPath);
+        Modeling mymodel=new Modeling();
+        mymodel.ParseGui(guInputPath,outputGuiPath);
+        mymodel.parseLogic(logicInputPath,logicOutputPath);
         }
 
 

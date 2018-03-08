@@ -18,7 +18,6 @@ public class Modeling {
         for (int i = 0; i < myLabels.size(); i++) {
             System.out.println(myLabels.get(i).name + "    " + myLabels.get(i).text + "    " + myLabels.get(i).size.x + "     " + myLabels.get(i).size.y + "      " + myLabels.get(i).location.x + "     " + myLabels.get(i).location.y);
         }
-        dataOutput=myFile.readFile(outputPath);
         myFile.writeFile(createGui(),outputPath);
     }
 
@@ -137,7 +136,83 @@ public class Modeling {
 GUI.append("</android.support.constraint.ConstraintLayout>");
 return(GUI.toString());
     }
+    public void parseLogic(String input,String output)
+    {
+        getlabelsData(input);
 
+        StringBuilder logic=new StringBuilder("package com.example.mohamed.test;\n" +
+                "\n" +
+                "import android.support.v7.app.AppCompatActivity;\n" +
+                "import android.os.Bundle;\n" +
+                "import android.widget.TextView;\n" +
+                "\n" +
+                "import java.text.DateFormat;\n" +
+                "import java.text.SimpleDateFormat;\n" +
+                "import java.util.Calendar;\n" +
+                "import java.util.Date;\n" +
+                "import java.util.Locale;\n" +
+                "\n" +
+                "public class MainActivity extends AppCompatActivity {\n" +
+                "\n" +
+                "    @Override\n" +
+                "    protected void onCreate(Bundle savedInstanceState) {\n" +
+                "        super.onCreate(savedInstanceState);\n" +
+                "        setContentView(R.layout.activity_main);"+"\n");
+        for (int i = 0; i < myLabels.size(); i++) {
+            logic.append("TextView "+myLabels.get(i).name+" =(TextView) findViewById(R.id."+myLabels.get(i).name+");\n");
+            if(myLabels.get(i).date)
+            logic.append(myLabels.get(i).name+".setText("+"new SimpleDateFormat(\"dd-MM-yyyy\", Locale.getDefault()).format(new Date())"+");"+"\n");
+           else if(myLabels.get(i).time & myLabels.get(i).seconds)
+            {
+                logic.append("DateFormat df = new SimpleDateFormat(\"HH:mm:ss aa\");"+"\n");
+                logic.append(myLabels.get(i).name+".setText("+"df.format(Calendar.getInstance().getTime()));"+"\n");
+            }
+            else if(myLabels.get(i).time)
+            {
+                logic.append("DateFormat df = new SimpleDateFormat(\"HH:mm aa\");"+"\n");
+                logic.append(myLabels.get(i).name+".setText("+"df.format(Calendar.getInstance().getTime()));"+"\n");
+            }
+        }
+        logic.append("}\n}");
+        myFile.writeFile(logic.toString(),output);
+
+    }
+
+    public void getlabelsData(String input)
+    {
+        List<String> dinput = myFile.readFile(input);
+        boolean flag=false;
+        for (int i = 0; i < dinput.size(); i++) {
+            int t=dinput.get(i).indexOf("InitializeComponent();");
+            if(t!=-1 || flag)
+            {
+                flag=true;
+
+                for (int j = 0; j <myLabels.size() ; j++) {
+
+                   if(dinput.get(i).toString().contains(myLabels.get(j).name+".Text"))
+                    {
+                           if( dinput.get(i).toString().contains("hh:mm:ss tt"))
+                           {
+                               myLabels.get(j).time = true;
+                                myLabels.get(j).seconds=true;
+                           }
+                          else if( dinput.get(i).toString().contains("hh:mm tt"))
+                           {
+                               myLabels.get(j).time=true;
+                           }
+                           else if(dinput.get(i).toString().contains("dd/MM/yyyy"))
+                           {
+                               myLabels.get(j).date=true;
+                           }
+                            
+                    }
+                }
+
+
+            }
+        }
+    }
 
 
 }
