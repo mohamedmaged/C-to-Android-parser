@@ -23,9 +23,12 @@ public class Main {
         if(file.exists()) desktop.open(file);
 */
 ;
+        String guInputPath=new String("/home/mohamed/Downloads/Clock/Clock/Form1.Designer.cs");
+        String logicInputPath=new String("/home/mohamed/Downloads/Clock/Clock/Form1.cs");
+        String outputGuiPath=new String("/home/mohamed/AndroidStudioProjects/test/app/src/main/res/layout/activity_main.xml");
 Modeling mymodel=new Modeling();
-mymodel.ParseGui();
-    }
+mymodel.ParseGui(guInputPath,outputGuiPath);
+        }
 
 
 }
