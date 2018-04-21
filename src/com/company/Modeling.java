@@ -157,7 +157,7 @@ return(GUI.toString());
                 "    @Override\n" +
                 "    protected void onCreate(Bundle savedInstanceState) {\n" +
                 "        super.onCreate(savedInstanceState);\n" +
-                "        setContentView(R.layout.activity_main);"+"\n");
+                "        setContentView(R.la    yout.activity_main);"+"\n");
         for (int i = 0; i < myLabels.size(); i++) {
             logic.append("TextView "+myLabels.get(i).name+" =(TextView) findViewById(R.id."+myLabels.get(i).name+");\n");
             if(myLabels.get(i).date)
@@ -205,7 +205,7 @@ return(GUI.toString());
                            {
                                myLabels.get(j).date=true;
                            }
-                            
+
                     }
                 }
 
